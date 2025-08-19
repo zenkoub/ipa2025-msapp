@@ -3,6 +3,7 @@ from flask import Flask
 from flask import request
 from flask import render_template
 from flask import redirect
+from flask import url_for
 
 app = Flask(__name__)
 
@@ -13,14 +14,23 @@ def main():
     return render_template("index.html", data=data)
 
 @app.route("/add", methods=["POST"])
-def add_router():
-    yourname = request.form.get("name")
+def add_comment():
+    yourname = request.form.get("yourname")
     message = request.form.get("message")
 
-    if name and message:
-        data.append({"name": name, "message": message})
-    return redirect("/")
+    if yourname and message:
+        data.append({"yourname": yourname, "message": message})
+    return redirect(url_for("main"))
 
+@app.route("/delete/<idx>", methods=["POST"])
+def delete_comment(idx):
+    idx = int(idx)
+    try:
+        if 0 <= idx < len(data):
+            data.pop(idx)
+    except Exception:
+        pass
+    return redirect(url_for("main"))
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
