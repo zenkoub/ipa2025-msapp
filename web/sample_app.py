@@ -1,4 +1,3 @@
-❯ cat sample_app.py 
 from flask import Flask
 from flask import request
 from flask import render_template
@@ -34,3 +33,5 @@ def delete_comment(idx):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
+
+client = MongoClient("mongodb://mongo:27017/")
