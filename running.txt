@@ -1,0 +1,7 @@
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS                          PORTS               NAMES
+8ec360cac6ec        45fd9a3ce5de        "/bin/sh -c 'pip ins…"   About a minute ago   Exited (2) About a minute ago                       great_hermann
+CONTAINER ID   IMAGE          COMMAND                  CREATED                  STATUS                              PORTS                                       NAMES
+a3c0cdd7ef6f   45fd9a3ce5de   "/bin/sh -c 'pip ins…"   Less than a second ago   Exited (2) Less than a second ago                                               silly_mestorf
+8ec360cac6ec   45fd9a3ce5de   "/bin/sh -c 'pip ins…"   Less than a second ago   Exited (2) Less than a second ago                                               great_hermann
+2f0799257580   sampleapp      "/bin/sh -c 'python3…"   About a minute ago       Up About a minute                   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   samplerunning

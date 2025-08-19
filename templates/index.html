@@ -1,0 +1,15 @@
+❯ cat index.html 
+<html>
+<head>
+    <title>Sample app</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <h1>You are calling me from {{request.remote_addr}}</h1>
+    <form method="POST" action="/add">
+    <input name="name" placeholder="Enter Name" required />
+    <input name="message" placeholder="Enter Message" required />
+    <button type="submit">Add Comment</button>
+  </form>
+</body>
+</html>
