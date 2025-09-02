@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Routers</title>
-    <link rel="stylesheet" href="/static/style.css" />
-</head>
+<head><title>Routers</title></head>
+<link rel="stylesheet" href="/static/style.css" />
 <body>
-    <h1>Add Router</h1>
-    <form action="/add" method="POST">
-        <label>Router IP:</label>
-        <input type="text" name="router_ip" required><br><br>
-        <label>Username:</label>
-        <input type="text" placeholder="username" required><br><br>
-        <label>Password:</label>
-        <input type="password" placeholder="password" required><br><br>
-        <button type="submit">Save</button>
+  <h1>Register Router</h1>
+  <form action="/add" method="post">
+    IP: <input name="ip">
+    Username: <input name="username">
+    Password: <input name="password">
+    <button type="submit">Add</button>
   </form>
 
+  <h2>Routers List</h2>
   <ul>
-      {% for comment in routers %}
-          <li>{{ router["router_ip"] }} | {{ router["username"] }} | {{ router["password"] }}</li>
-      {% endfor %}
+    {% for router in routers %}
+    <li>
+      <a href="/router/{{ router.ip }}" style="margin-left:8px;">{{ router.ip }}</a> - {{ router.username }}
+      <form action="/delete/{{ router._id }}" method="post" style="display:inline;">
+        <button type="submit">Delete</button>
+     </form>
+    </li>
+    {% endfor %}
   </ul>
 </body>
 </html>
