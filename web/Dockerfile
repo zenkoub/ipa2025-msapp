@@ -1,7 +1,8 @@
-FROM python
-RUN pip install flask
-COPY  ./static /home/myapp/static/
-COPY  ./templates /home/myapp/templates/
-COPY  sample_app.py /home/myapp/
+FROM python:3.12
+COPY ./requirements.txt /home/myapp/requirements.txt
+RUN pip install -r /home/myapp/requirements.txt
+COPY  ./static /home/myapp/static
+COPY  ./templates /home/myapp/templates
+COPY  app.py /home/myapp/
 EXPOSE 8080
-# CMD python3 /home/myapp/sample_app.py
+CMD python /home/myapp/app.py
